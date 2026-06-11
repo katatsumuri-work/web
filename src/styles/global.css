@@ -1,0 +1,148 @@
+:root {
+  --brand: #2f6f4f;
+  --brand-dark: #245a3f;
+  --ink: #1f2421;
+  --muted: #5d6b63;
+  --line: #e2e8e3;
+  --bg-alt: #f4f8f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Hiragino Kaku Gothic ProN',
+    'Noto Sans JP',
+    'Yu Gothic',
+    sans-serif;
+  line-height: 1.8;
+  background: #fff;
+}
+
+.container {
+  width: min(880px, 90vw);
+  margin-inline: auto;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(160deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 0 4rem;
+}
+.hero__mark {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+}
+.hero__title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+.hero__sub {
+  margin: 0.4rem 0 0;
+  opacity: 0.85;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+}
+.hero__tagline {
+  margin: 1.4rem 0 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* Sections */
+.section {
+  padding: 3.5rem 0;
+}
+.section--alt {
+  background: var(--bg-alt);
+}
+.section__title {
+  font-size: 1.4rem;
+  margin: 0 0 1.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--brand);
+  display: inline-block;
+}
+
+/* Overview table */
+.overview {
+  width: 100%;
+  border-collapse: collapse;
+}
+.overview th,
+.overview td {
+  text-align: left;
+  padding: 0.9rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.overview th {
+  width: 8.5rem;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Services */
+.services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.service {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+.service__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--brand-dark);
+}
+.service__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Contact */
+.contact__lead {
+  margin: 0 0 0.8rem;
+}
+.contact__email a {
+  font-size: 1.15rem;
+  color: var(--brand-dark);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Footer */
+.footer {
+  background: var(--ink);
+  color: #fff;
+  padding: 1.6rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.footer__inner p {
+  margin: 0;
+  opacity: 0.8;
+}
