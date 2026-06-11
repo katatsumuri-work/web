@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+import { company } from '../data/company';
+
+const overview = [
+  { label: '商号', value: company.name },
+  { label: '英文表記', value: company.legalName },
+  { label: '設立', value: company.established },
+  { label: '代表社員', value: company.representative },
+  { label: '所在地', value: company.address },
+  { label: '資本金', value: company.capital },
+  { label: '事業年度', value: company.fiscalYear },
+];
+
+const description = `${company.name}（${company.legalName}）の会社概要。AI・ソフトウェア開発、デザイン、コンテンツ企画・制作を行っています。`;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{company.name}｜{company.legalName}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={company.website} />
+    <meta property="og:title" content={company.name} />
+    <meta property="og:description" content={company.tagline} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={company.website} />
+    <meta name="theme-color" content="#2f6f4f" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container hero__inner">
+        <p class="hero__mark" aria-hidden="true">🐌</p>
+        <h1 class="hero__title">{company.name}</h1>
+        <p class="hero__sub">{company.legalName}</p>
+        <p class="hero__tagline">{company.tagline}</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="about" aria-labelledby="about-h">
+        <div class="container">
+          <h2 class="section__title" id="about-h">会社概要</h2>
+          <table class="overview">
+            <tbody>
+              {
+                overview.map((row) => (
+                  <tr>
+                    <th scope="row">{row.label}</th>
+                    <td>{row.value}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="services" aria-labelledby="services-h">
+        <div class="container">
+          <h2 class="section__title" id="services-h">事業内容</h2>
+          <ul class="services">
+            {
+              company.services.map((s) => (
+                <li class="service">
+                  <h3 class="service__title">{s.title}</h3>
+                  <p class="service__desc">{s.description}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-h">
+        <div class="container">
+          <h2 class="section__title" id="contact-h">お問い合わせ</h2>
+          <p class="contact__lead">
+            お仕事のご相談・ご連絡は、下記メールアドレスまでお願いいたします。
+          </p>
+          <p class="contact__email">
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>&copy; 2026 {company.name}</p>
+      </div>
+    </footer>
+  </body>
+</html>

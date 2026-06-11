@@ -1,0 +1,5 @@
+# pnpm 11 はビルドスクリプト（postinstall 等）をデフォルトでブロックする。
+# Astro のビルドに必要な esbuild / sharp を明示的に許可する。
+allowBuilds:
+  esbuild: true
+  sharp: true
