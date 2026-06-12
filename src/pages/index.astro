@@ -1,6 +1,10 @@
 ---
 import '../styles/global.css';
-import { company } from '../data/company';
+import { getCompany, getServices, tagline } from '../data/company';
+
+// ビルド時に API（katatsumuri.work の API）から会社情報・事業内容を取得する。
+const company = await getCompany();
+const services = await getServices();
 
 const overview = [
   { label: '商号', value: company.name },
@@ -24,7 +28,7 @@ const description = `${company.name}（${company.legalName}）の会社概要。
     <meta name="description" content={description} />
     <link rel="canonical" href={company.website} />
     <meta property="og:title" content={company.name} />
-    <meta property="og:description" content={company.tagline} />
+    <meta property="og:description" content={tagline} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={company.website} />
     <meta name="theme-color" content="#2f6f4f" />
@@ -35,7 +39,7 @@ const description = `${company.name}（${company.legalName}）の会社概要。
         <p class="hero__mark" aria-hidden="true">🐌</p>
         <h1 class="hero__title">{company.name}</h1>
         <p class="hero__sub">{company.legalName}</p>
-        <p class="hero__tagline">{company.tagline}</p>
+        <p class="hero__tagline">{tagline}</p>
       </div>
     </header>
 
@@ -63,7 +67,7 @@ const description = `${company.name}（${company.legalName}）の会社概要。
           <h2 class="section__title" id="services-h">事業内容</h2>
           <ul class="services">
             {
-              company.services.map((s) => (
+              services.map((s) => (
                 <li class="service">
                   <h3 class="service__title">{s.title}</h3>
                   <p class="service__desc">{s.description}</p>
