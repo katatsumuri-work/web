@@ -17,7 +17,7 @@ export const company = {
   representative: '山﨑 亮',
   address: '東京都港区浜松町２丁目２番１５号　浜松町ダイヤビル２Ｆ',
   capital: '500,000円',
-  fiscalYear: '4月1日 〜 翌年3月31日', // 仮置き。確定したら差し替える。
+  fiscalYear: '6月1日 〜 翌年5月31日',
 
   // --- 連絡先 ---
   email: 'info@katatsumuri.work', // 【要確認：このアドレスで公開してよいか】
