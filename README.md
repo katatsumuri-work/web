@@ -36,8 +36,8 @@ pnpm deploy     # build → firebase deploy --only hosting
 
 ### カスタムドメイン（apex / 外部 DNS）
 
-`katatsumuri.work` の DNS はムームー管理。Firebase コンソールの Hosting → カスタムドメインで
+`katatsumuri.work` の DNS はムームードメイン管理。Firebase コンソールの Hosting → カスタムドメインで
 `katatsumuri.work` を追加すると、登録すべき **A レコード（と確認用 TXT）** が提示される。
-それをムームー DNS に追加する（**MX は触らない＝メール無傷**）。SSL は Firebase が自動発行。
+それをムームードメイン DNS に追加する（**MX は触らない＝メール無傷**）。SSL は Firebase が自動発行。
 
 > apex は CNAME 不可のため A レコードを使う。`www` を使う場合は CNAME も可。
